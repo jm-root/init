@@ -62,30 +62,6 @@ module.exports = [
         ]
       },
       {
-        'code': '/acl/resources',
-        'title': '资源',
-        'permissions': [
-          'put',
-          'delete',
-          'post',
-          'get'
-        ],
-        'sort': 0,
-        'children': [
-          {
-            'code': '/acl/resources/:id',
-            'title': '指定资源',
-            'permissions': [
-              'put',
-              'delete',
-              'post',
-              'get'
-            ],
-            'sort': 0
-          }
-        ]
-      },
-      {
         'code': '/acl/roles',
         'title': '角色',
         'permissions': [
@@ -178,6 +154,14 @@ module.exports = [
             ]
           }
         ]
+      },
+      {
+        'code': '/acl/user',
+        'title': '当前用户',
+        'permissions': [
+          'get'
+        ],
+        'sort': 0
       }
     ]
   },

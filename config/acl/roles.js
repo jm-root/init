@@ -32,6 +32,7 @@ module.exports = [
     parents: ['guest'],
     allows: [
       { resource: '/user/users/:id', permissions: ['put', 'post', 'delete'] },
+      { resource: '/acl/user', permissions: ['get'] },
       { resource: '/oms/nav', permissions: ['get'] }
     ]
   },
