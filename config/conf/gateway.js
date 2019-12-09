@@ -1,95 +1,95 @@
 module.exports = {
   'init': {
-    'proxy': 'http://init.app.rancher.internal'
+    'proxy': 'http://init'
   },
   'mq-kafka': {
-    'proxy': 'http://mq-kafka.app.rancher.internal/mq',
+    'proxy': 'http://mq-kafka/mq',
     'prefix': '/mq'
   },
   'pay-wechat-notify': {
-    'httpProxy': 'http://pay-wechat.app.rancher.internal',
+    'httpProxy': 'http://pay-wechat',
     'prefix': '/pay/wechat/pay.notify'
   },
   'pay-wechat-refundnotify': {
-    'httpProxy': 'http://pay-wechat.app.rancher.internal',
+    'httpProxy': 'http://pay-wechat',
     'prefix': '/pay/wechat/pay.refundnotify'
   },
   'pay-wechat': {
-    'proxy': 'http://pay-wechat.app.rancher.internal/pay/prepay/wechat',
+    'proxy': 'http://pay-wechat/pay/prepay/wechat',
     'prefix': '/pay/prepay/wechat'
   },
   'pay-alipay': {
-    'proxy': 'http://pay-alipay.app.rancher.internal/pay/prepay/alipay',
+    'proxy': 'http://pay-alipay/pay/prepay/alipay',
     'prefix': '/pay/prepay/alipay'
   },
   'gate': {
-    'proxy': 'http://gate.app.rancher.internal/gate'
+    'proxy': 'http://gate/gate'
   },
   'acl': {
-    'proxy': 'http://acl.app.rancher.internal/acl'
+    'proxy': 'http://acl/acl'
   },
   'sso': {
-    'proxy': 'http://sso.app.rancher.internal/sso'
+    'proxy': 'http://sso/sso'
   },
   'bank': {
-    'proxy': 'http://bank.app.rancher.internal/bank'
+    'proxy': 'http://bank/bank'
   },
   'qrcode': {
-    'proxy': 'http://qrcode.app.rancher.internal/qrcode'
+    'proxy': 'http://qrcode/qrcode'
   },
   'wechat': {
-    'proxy': 'http://wechat.app.rancher.internal/wechat'
+    'proxy': 'http://wechat/wechat'
   },
   'passport-wechat': {
     'prefix': '/passport/wechat',
-    'proxy': 'http://passport-wechat.app.rancher.internal/passport'
+    'proxy': 'http://passport-wechat/passport'
   },
   'weapp': {
-    'proxy': 'http://weapp.app.rancher.internal/weapp'
+    'proxy': 'http://weapp/weapp'
   },
   'passport-weapp': {
     'prefix': '/passport/weapp',
-    'proxy': 'http://passport-weapp.app.rancher.internal/passport'
+    'proxy': 'http://passport-weapp/passport'
   },
   'passport-mobile': {
     'prefix': '/passport/mobile',
-    'proxy': 'http://passport-mobile.app.rancher.internal/passport'
+    'proxy': 'http://passport-mobile/passport'
   },
   'passport-guest': {
     'prefix': '/passport/guest',
-    'proxy': 'http://passport-guest.app.rancher.internal/passport'
+    'proxy': 'http://passport-guest/passport'
   },
   'passport': {
-    'proxy': 'http://passport.app.rancher.internal/passport'
+    'proxy': 'http://passport/passport'
   },
   'sms': {
-    'proxy': 'http://sms.app.rancher.internal/sms'
+    'proxy': 'http://sms/sms'
   },
   'captcha': {
-    'proxy': 'http://captcha.app.rancher.internal/captcha'
+    'proxy': 'http://captcha/captcha'
   },
   'verifycode': {
-    'proxy': 'http://verifycode.app.rancher.internal/verifycode'
+    'proxy': 'http://verifycode/verifycode'
   },
   'user': {
-    'proxy': 'http://user.app.rancher.internal/user'
+    'proxy': 'http://user/user'
   },
   'tb': {
-    'proxy': 'http://tb.app.rancher.internal'
+    'proxy': 'http://tb'
   },
   'cny': {
-    'proxy': 'http://cny.app.rancher.internal'
+    'proxy': 'http://cny'
   },
   'pay': {
-    'proxy': 'http://pay.app.rancher.internal/pay'
+    'proxy': 'http://pay/pay'
   },
   'log': {
-    'proxy': 'http://log.app.rancher.internal/log'
+    'proxy': 'http://log/log'
   },
   'wordfilter': {
-    'proxy': 'http://wordfilter.app.rancher.internal/wordfilter'
+    'proxy': 'http://wordfilter/wordfilter'
   },
   'agent': {
-    'proxy': 'http://agent.app.rancher.internal/agent'
+    'proxy': 'http://agent/agent'
   }
 }

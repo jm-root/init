@@ -11,7 +11,7 @@
     },
     {
       "type": "dateFile",
-      "filename": "logs/main",
+      "filename": "logs/init",
       "pattern": "-yyyyMMdd.log",
       "alwaysIncludePattern": true,
       "category": [
