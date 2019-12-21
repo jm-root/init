@@ -25,7 +25,7 @@ module.exports = class extends require('service') {
         nick,
         roles
       })
-      await this.acl.put(`/users/${_id}/roles`, { roles })
+      await this.acl.put(`/users/${_id}`, { roles })
 
       v.push(doc)
     }
