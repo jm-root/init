@@ -1,3 +1,5 @@
+const compareVersions = require('compare-versions')
+
 module.exports = class extends require('service') {
   constructor (opts = {}) {
     super(opts)
@@ -9,6 +11,7 @@ module.exports = class extends require('service') {
   }
 
   async initUsers () {
+    const { acl } = this
     const users = this.defaultUsers
     const v = []
     for (let { account, id: _id, nick, password, roles } of users) {
@@ -20,12 +23,18 @@ module.exports = class extends require('service') {
       }
       doc = await this.passport.post('/register', { account, _id, nick, password })
 
-      await this.acl.post('/users', {
+      await acl.post('/users', {
         _id,
         nick,
         roles
       })
-      await this.acl.put(`/users/${_id}`, { roles })
+
+      const { version: aclVer } = await acl.get('/')
+      if (compareVersions(aclVer, '1.0.0', '>=')) {
+        await acl.put(`/users/${_id}`, { roles })
+      } else {
+        await acl.put(`/users/${_id}/roles`, { roles })
+      }
 
       v.push(doc)
     }
