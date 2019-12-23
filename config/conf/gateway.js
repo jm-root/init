@@ -2,6 +2,15 @@ module.exports = {
   'init': {
     'proxy': 'http://init'
   },
+  'acl': {
+    'proxy': 'http://acl/acl'
+  },
+  'sso': {
+    'proxy': 'http://sso/sso'
+  },
+  'user': {
+    'proxy': 'http://user/user'
+  },
   'mq-kafka': {
     'proxy': 'http://mq-kafka/mq',
     'prefix': '/mq'
@@ -24,12 +33,6 @@ module.exports = {
   },
   'gate': {
     'proxy': 'http://gate/gate'
-  },
-  'acl': {
-    'proxy': 'http://acl/acl'
-  },
-  'sso': {
-    'proxy': 'http://sso/sso'
   },
   'bank': {
     'proxy': 'http://bank/bank'
@@ -70,9 +73,6 @@ module.exports = {
   },
   'verifycode': {
     'proxy': 'http://verifycode/verifycode'
-  },
-  'user': {
-    'proxy': 'http://user/user'
   },
   'tb': {
     'proxy': 'http://tb'
