@@ -10,7 +10,14 @@ describe('service', () => {
   test('init', async () => {
     service.init()
   })
-  test('exportResources', async () => {
-    service.exportResources()
+
+  test('exportAclConfig', async () => {
+    const doc = await service.exportAclConfig()
+    console.log(JSON.stringify(doc, null, 2))
+  })
+
+  test('convert01', async () => {
+    const doc = service.convert01(service.defaultAclConfig)
+    console.log(JSON.stringify(doc, null, 2))
   })
 })

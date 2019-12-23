@@ -8,7 +8,18 @@ module.exports = function (opts = {}) {
     return service.init()
   }
 
-  router.add('/init', 'get', init)
+  async function exportAclConfig () {
+    return service.exportAclConfig()
+  }
+
+  async function convert01 ({ data }) {
+    return service.convert01(data)
+  }
+
+  router
+    .add('/init', 'get', init)
+    .add('/export', 'get', exportAclConfig)
+    .add('/convert01', 'post', convert01)
 
   return router
 }
