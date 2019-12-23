@@ -1,4 +1,4 @@
-const compareVersions = require('compare-versions')
+const semver = require('semver')
 
 module.exports = class extends require('service') {
   constructor (opts = {}) {
@@ -30,9 +30,7 @@ module.exports = class extends require('service') {
       })
 
       const { version: aclVer } = await acl.get('/')
-      if (compareVersions(aclVer, '1.0.0', '>=')) {
-        await acl.put(`/users/${_id}`, { roles })
-      } else {
+      if (semver.satisfies(aclVer, '0.x')) {
         await acl.put(`/users/${_id}/roles`, { roles })
       }
 
