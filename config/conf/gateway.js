@@ -43,24 +43,8 @@ module.exports = {
   'wechat': {
     'proxy': 'http://wechat/wechat'
   },
-  'passport-wechat': {
-    'prefix': '/passport/wechat',
-    'proxy': 'http://passport-wechat/passport'
-  },
   'weapp': {
     'proxy': 'http://weapp/weapp'
-  },
-  'passport-weapp': {
-    'prefix': '/passport/weapp',
-    'proxy': 'http://passport-weapp/passport'
-  },
-  'passport-mobile': {
-    'prefix': '/passport/mobile',
-    'proxy': 'http://passport-mobile/passport'
-  },
-  'passport-guest': {
-    'prefix': '/passport/guest',
-    'proxy': 'http://passport-guest/passport'
   },
   'passport': {
     'proxy': 'http://passport/passport'
