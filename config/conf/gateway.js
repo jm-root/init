@@ -47,7 +47,7 @@ module.exports = {
     'proxy': 'http://weapp/weapp'
   },
   'passport': {
-    'proxy': 'http://passport/passport'
+    'proxy': 'http://passport'
   },
   'sms': {
     'proxy': 'http://sms/sms'
