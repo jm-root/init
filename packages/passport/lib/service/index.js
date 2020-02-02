@@ -11,15 +11,16 @@ module.exports = class extends require('service') {
   }
 
   async initUsers () {
-    const { acl } = this
+    const { user, acl } = this
     const users = this.defaultUsers
     const v = []
     for (let { account, id: _id, nick, password, roles } of users) {
       nick || (nick = account)
       password || (password = '123')
-      let doc = await this.user.get(`/users/${account}/exists`)
+      let doc = await user.get(`/users/${account}/exists`)
       if (doc && doc.ret) {
-        await this.user.delete(`/users/${doc.ret}`)
+        await user.delete(`/users/${doc.ret}`)
+        await acl.delete(`/users/${doc.ret}`)
       }
       doc = await this.passport.post('/register', { account, _id, nick, password })
 
