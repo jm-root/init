@@ -551,14 +551,14 @@ module.exports = {
     },
     {
       'id': '/verifycode',
-      'title': '验证',
+      'title': '验证码',
       'permissions': [
         'get'
       ],
       'children': [
         {
           'id': '/:key/check',
-          'title': '验证验证码',
+          'title': '检查验证码',
           'permissions': [
             'get'
           ]

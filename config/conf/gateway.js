@@ -11,6 +11,9 @@ module.exports = {
   'user': {
     'proxy': 'http://user/user'
   },
+  'wechat-user': {
+    'proxy': 'http://wechat-user/wechat-user'
+  },
   'mq-kafka': {
     'proxy': 'http://mq-kafka/mq',
     'prefix': '/mq'
