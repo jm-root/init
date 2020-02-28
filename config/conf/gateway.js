@@ -11,37 +11,11 @@ module.exports = {
   'user': {
     'proxy': 'http://user/user'
   },
+  'userbind': {
+    'proxy': 'http://userbind/userbind'
+  },
   'wechat-user': {
     'proxy': 'http://wechat-user/wechat-user'
-  },
-  'mq-kafka': {
-    'proxy': 'http://mq-kafka/mq',
-    'prefix': '/mq'
-  },
-  'pay-wechat-notify': {
-    'httpProxy': 'http://pay-wechat',
-    'prefix': '/pay/wechat/pay.notify'
-  },
-  'pay-wechat-refundnotify': {
-    'httpProxy': 'http://pay-wechat',
-    'prefix': '/pay/wechat/pay.refundnotify'
-  },
-  'pay-wechat': {
-    'proxy': 'http://pay-wechat/pay/prepay/wechat',
-    'prefix': '/pay/prepay/wechat'
-  },
-  'pay-alipay': {
-    'proxy': 'http://pay-alipay/pay/prepay/alipay',
-    'prefix': '/pay/prepay/alipay'
-  },
-  'gate': {
-    'proxy': 'http://gate/gate'
-  },
-  'bank': {
-    'proxy': 'http://bank/bank'
-  },
-  'qrcode': {
-    'proxy': 'http://qrcode/qrcode'
   },
   'wechat': {
     'proxy': 'http://wechat/wechat'
@@ -61,6 +35,13 @@ module.exports = {
   'verifycode': {
     'proxy': 'http://verifycode/verifycode'
   },
+  'mq-kafka': {
+    'proxy': 'http://mq-kafka/mq',
+    'prefix': '/mq'
+  },
+  'bank': {
+    'proxy': 'http://bank/bank'
+  },
   'tb': {
     'proxy': 'http://tb'
   },
@@ -69,6 +50,25 @@ module.exports = {
   },
   'pay': {
     'proxy': 'http://pay/pay'
+  },
+  'pay-wechat-notify': {
+    'httpProxy': 'http://pay-wechat',
+    'prefix': '/pay/wechat/pay.notify'
+  },
+  'pay-wechat-refundnotify': {
+    'httpProxy': 'http://pay-wechat',
+    'prefix': '/pay/wechat/pay.refundnotify'
+  },
+  'pay-wechat': {
+    'proxy': 'http://pay-wechat/pay/prepay/wechat',
+    'prefix': '/pay/prepay/wechat'
+  },
+  'pay-alipay': {
+    'proxy': 'http://pay-alipay/pay/prepay/alipay',
+    'prefix': '/pay/prepay/alipay'
+  },
+  'qrcode': {
+    'proxy': 'http://qrcode/qrcode'
   },
   'log': {
     'proxy': 'http://log/log'
