@@ -58,7 +58,7 @@ module.exports = class extends require('service') {
     const { acl } = this.gateway
     const ver = await this.getVersion()
     if (semver.satisfies(ver, '1.x')) {
-      return acl.post('/init', this.defaultAclConfigVer1)
+      return acl.get('/clear')
     } else {
       return acl.post('/init', this.defaultAclConfig)
     }
