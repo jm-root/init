@@ -1,4 +1,6 @@
 module.exports = {
+  lng: 'zh_CN',
+  service_name: 'acl',
   modules: {
     conf: {
       config: require('./conf')
