@@ -1,40 +1,21 @@
+const { Service } = require('jm-server')
 const log = require('jm-log4js')
-const event = require('jm-event')
-const MS = require('jm-ms')
-const t = require('locale')
-
 const logger = log.getLogger('main')
-const ms = new MS()
 
-class Service {
+module.exports = class extends Service {
   constructor (opts = {}) {
-    if (opts.debug) {
-      logger.setLevel('debug')
+    super(opts)
+    const { gateway, debug, app } = opts
+    debug && (logger.setLevel('debug'))
+
+    Object.assign(this, { app, logger })
+
+    if (gateway) {
+      require('./gateway')({ gateway })
+        .then(doc => {
+          this.gateway = doc
+          this.emit('ready')
+        })
     }
-    event.enableEvent(this, { sync: true })
-    this.logger = logger
-    this.t = t
-    this.gateway = opts.gateway
-
-    this.onReady()
-  }
-
-  async onReady () {
-    if (this.ready) return
-    return new Promise(resolve => {
-      this.once('ready', () => {
-        this.ready = true
-        resolve()
-      })
-    })
-  }
-
-  async bind (name, uri) {
-    uri || (uri = `/${name}`)
-    let doc = await ms.client({ uri: this.gateway + uri })
-    this[name] = doc
-    return doc
   }
 }
-
-module.exports = Service

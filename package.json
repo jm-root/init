@@ -1,4 +1,6 @@
 {
+  "name": "init",
+  "version": "0.0.2",
   "private": true,
   "workspaces": [
     "packages/*"
@@ -28,9 +30,10 @@
   "dependencies": {
     "bson": "^4.0.2",
     "compare-versions": "^3.5.1",
-    "config": "^3.1.0",
-    "jm-ms-wrapper": "^1.0.1",
-    "jm-server": "^2.0.6",
+    "config": "^3.2.4",
+    "jm-server": "^2.1.1",
+    "jm-server-jaeger": "^0.0.4",
+    "log4js": "^6.1.0",
     "semver": "^7.1.1"
   },
   "devDependencies": {

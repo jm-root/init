@@ -13,12 +13,22 @@ module.exports = class extends require('service') {
 
       convert01
     })
-    this.bind('acl')
-    this.emit('ready')
+
+    this.onReady()
+      .then(() => {
+        const { gateway } = this
+        gateway.bind('acl')
+      })
+  }
+
+  router (opts) {
+    const dir = `${__dirname}/../router`
+    return this.loadRouter(dir, opts)
   }
 
   async getVersion () {
-    const { version } = await this.acl.get('/')
+    const { acl } = this.gateway
+    const { version } = await acl.get('/')
     return version
   }
 
@@ -45,11 +55,12 @@ module.exports = class extends require('service') {
   }
 
   async initAcl () {
+    const { acl } = this.gateway
     const ver = await this.getVersion()
     if (semver.satisfies(ver, '1.x')) {
-      return this.acl.post('/init', this.defaultAclConfigVer1)
+      return acl.post('/init', this.defaultAclConfigVer1)
     } else {
-      return this.acl.post('/init', this.defaultAclConfig)
+      return acl.post('/init', this.defaultAclConfig)
     }
   }
 

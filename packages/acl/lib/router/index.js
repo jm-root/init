@@ -1,10 +1,7 @@
-const Router = require('router')
+const { ms } = require('jm-server')
 
-module.exports = function (opts = {}) {
-  const service = this
-  const router = new Router(service, { dir: __dirname, ...opts }).router
-
-  async function init (opts) {
+module.exports = function (service) {
+  async function init () {
     return service.init()
   }
 
@@ -16,6 +13,7 @@ module.exports = function (opts = {}) {
     return service.convert01(data)
   }
 
+  const router = ms.router()
   router
     .add('/init', 'get', init)
     .add('/export', 'get', exportAclConfig)

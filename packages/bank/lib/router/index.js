@@ -1,13 +1,11 @@
-const Router = require('router')
+const { ms } = require('jm-server')
 
-module.exports = function (opts = {}) {
-  const service = this
-  const router = new Router(service, { dir: __dirname, ...opts }).router
-
+module.exports = function (service) {
   async function init (opts) {
     return service.init()
   }
 
+  const router = ms.router()
   router.add('/init', 'get', init)
 
   return router

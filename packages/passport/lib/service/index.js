@@ -4,14 +4,23 @@ module.exports = class extends require('service') {
   constructor (opts = {}) {
     super(opts)
     this.defaultUsers = opts.defaultUsers
-    this.bind('user')
-    this.bind('passport')
-    this.bind('acl')
-    this.emit('ready')
+
+    this.onReady()
+      .then(() => {
+        const { gateway } = this
+        gateway.bind('user')
+        gateway.bind('passport')
+        gateway.bind('acl')
+      })
+  }
+
+  router (opts) {
+    const dir = `${__dirname}/../router`
+    return this.loadRouter(dir, opts)
   }
 
   async initUsers () {
-    const { user, acl } = this
+    const { user, acl, passport } = this.gateway
     const users = this.defaultUsers
     const v = []
     for (let { account, id: _id, nick, password, roles } of users) {
@@ -22,7 +31,7 @@ module.exports = class extends require('service') {
         await user.delete(`/users/${doc.ret}`)
         await acl.delete(`/users/${doc.ret}`)
       }
-      doc = await this.passport.post('/register', { account, _id, nick, password })
+      doc = await passport.post('/register', { account, _id, nick, password })
 
       await acl.post('/users', {
         _id,
