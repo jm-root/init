@@ -67,6 +67,12 @@ module.exports = {
     'proxy': 'http://pay-alipay/pay/prepay/alipay',
     'prefix': '/pay/prepay/alipay'
   },
+  'upload': {
+    'httpProxy': 'http://upload'
+  },
+  'me': {
+    'proxy': 'http://me/me'
+  },
   'qrcode': {
     'proxy': 'http://qrcode/qrcode'
   },
